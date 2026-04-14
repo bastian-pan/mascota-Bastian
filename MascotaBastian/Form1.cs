@@ -17,7 +17,7 @@ namespace MascotaBastian
         {
             //confi del timer o tiempo que se actualiza
             timermascota = new System.Windows.Forms.Timer();
-            timermascota.Interval = 5000;
+            timermascota.Interval = 3000;
             timermascota.Tick += Timermascota_Tick;
             timermascota.Start();
 
