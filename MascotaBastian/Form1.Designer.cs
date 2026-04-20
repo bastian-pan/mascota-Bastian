@@ -222,6 +222,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 341);
+            Controls.Add(pctNormal);
             Controls.Add(pctTriste);
             Controls.Add(pctsuenio);
             Controls.Add(pctFeliz);
@@ -238,7 +239,6 @@
             Controls.Add(lblSueño);
             Controls.Add(lblenergia);
             Controls.Add(lblHambre);
-            Controls.Add(pctNormal);
             Controls.Add(pgsHambre);
             Name = "Form1";
             Text = "Firulais";

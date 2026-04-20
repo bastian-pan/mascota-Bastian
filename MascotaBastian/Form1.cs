@@ -1,4 +1,4 @@
-using System.Timers;
+﻿using System.Timers;
 using System.Windows.Forms;
 
 namespace MascotaBastian
@@ -6,6 +6,18 @@ namespace MascotaBastian
     public partial class Form1 : Form
     {
         private System.Windows.Forms.Timer timermascota;
+
+        private int edad = 0;
+        private int contadorAcciones = 0;
+
+        private enum Etapa         {
+            Cachorro,
+            Adulto,
+            Anciano
+        }
+        private Etapa etapaActual = Etapa.Cachorro;
+
+        private int tiempoCritico = 0;
 
         public Form1()
         {
@@ -24,21 +36,29 @@ namespace MascotaBastian
             //confi del inicio de la mascota
             pgsHambre.Value = 30;
             pgsFelicidad.Value = 50;
-            pgsSue�o.Value = 20;
+            pgsSueño.Value = 20;
             pgsEnergia.Value = 80;
-          
 
+            mostrarEstado();
         }
 
 
 
         private void Timermascota_Tick(object sender, EventArgs e)
         {
-            barrasProgreso(pgsHambre, 5);
-            barrasProgreso(pgsFelicidad, -5);
-            barrasProgreso(pgsSue�o, 5);
-            barrasProgreso(pgsEnergia, -5);
+            int desgaste = 5;
 
+            if (etapaActual == Etapa.Adulto)
+                desgaste = 7;
+            else if (etapaActual == Etapa.Anciano)
+                desgaste = 10;
+
+            barrasProgreso(pgsHambre, desgaste);
+            barrasProgreso(pgsFelicidad, -desgaste);
+            barrasProgreso(pgsSueño, desgaste);
+            barrasProgreso(pgsEnergia, -desgaste);
+
+            detectarEstadoCritico();
             mostrarEstado();
         }
 
@@ -74,9 +94,10 @@ namespace MascotaBastian
         {
             barrasProgreso(pgsFelicidad, 10);
             barrasProgreso(pgsHambre, 15);
-            barrasProgreso(pgsSue�o, 20);
+            barrasProgreso(pgsSueño, 20);
             barrasProgreso (pgsEnergia, -10);
 
+            sumarAccion();
             mostrarEstado();
         }
 
@@ -91,16 +112,18 @@ namespace MascotaBastian
             barrasProgreso(pgsFelicidad, 15);
             barrasProgreso(pgsEnergia, 30);
 
+            sumarAccion();
             mostrarEstado();
         }
 
         private void btnDormir_Click(object sender, EventArgs e)
         {
-            barrasProgreso(pgsSue�o, -50);
+            barrasProgreso(pgsSueño, -50);
             barrasProgreso(pgsEnergia, 50);
             barrasProgreso(pgsHambre, 30);
             barrasProgreso(pgsFelicidad, 20);
 
+            sumarAccion();
             mostrarEstado();
 
         }
@@ -113,8 +136,30 @@ namespace MascotaBastian
             barrasProgreso(pgsHambre, 10);
             barrasProgreso (pgsEnergia, -30);
 
+            sumarAccion();
             mostrarEstado();
 
+        }
+
+        private void sumarAccion()
+        {
+            contadorAcciones++;
+
+            if (contadorAcciones >= 10)
+            {
+                edad++;
+                contadorAcciones = 0;
+                actualizarEtapa();
+            }
+        }
+        private void actualizarEtapa()
+        {
+            if (edad < 3)
+                etapaActual = Etapa.Cachorro;
+            else if (edad < 6)
+                etapaActual = Etapa.Adulto;
+            else
+                etapaActual = Etapa.Anciano;
         }
         private void mostrarEstado(){ 
             if (pgsHambre.Value > 50)
@@ -135,9 +180,9 @@ namespace MascotaBastian
                 pctTriste.Visible = true;
                 pctsuenio.Visible = false;
             }
-            else if (pgsSue�o.Value > 70)
+            else if (pgsSueño.Value > 70)
             {
-                lblEstado.Text = "Tengo mucho sue�o";
+                lblEstado.Text = "Tengo mucho sueño";
                 pctFeliz.Visible = false;
                 pctNormal.Visible = false;
                 pctTriste.Visible = false;
@@ -159,7 +204,65 @@ namespace MascotaBastian
                 pctTriste.Visible = false;
                 pctsuenio.Visible = false;
             }
+            actualizarBotones();
+        }
+        private void actualizarBotones()
+        {
+            btnAlimentar.Enabled = false;
+            btnJugar.Enabled = false;
+            btnDormir.Enabled = false;
+            btnbaniar.Enabled = false;
 
+            if (pgsHambre.Value > 50)
+                btnAlimentar.Enabled = true;
+            else if (pgsSueño.Value > 70 || pgsEnergia.Value < 30)
+                btnDormir.Enabled = true;
+            else if (pgsFelicidad.Value < 20)
+            {
+                btnJugar.Enabled = true;
+                btnbaniar.Enabled = true;
+            }
+            else
+            {
+                btnAlimentar.Enabled = true;
+                btnJugar.Enabled = true;
+                btnDormir.Enabled = true;
+                btnbaniar.Enabled = true;
+            }
+        }
+        private void detectarEstadoCritico()
+        {
+            if (pgsFelicidad.Value == 0 || pgsEnergia.Value == 0)
+            {
+                tiempoCritico += 3; // tu timer es 3 segundos
+            }
+            else
+            {
+                tiempoCritico = 0;
+            }
+
+            if (tiempoCritico >= 30)
+            {
+                activarPerrera();
+            }
+        }
+        private void activarPerrera()
+        {
+            timermascota.Stop();
+
+            lblEstado.Text = "Tu mascota fue llevada a la perrera 😢";
+
+            pctFeliz.Visible = false;
+            pctNormal.Visible = false;
+            pctTriste.Visible = true;
+            pctsuenio.Visible = false;
+
+            btnAlimentar.Enabled = false;
+            btnJugar.Enabled = false;
+            btnDormir.Enabled = false;
+            btnbaniar.Enabled = false;
+
+            MessageBox.Show("Fin del juego");
         }
     }
 }
