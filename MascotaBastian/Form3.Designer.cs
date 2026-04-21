@@ -89,6 +89,7 @@
             btnSalir.TabIndex = 41;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click_1;
             // 
             // pgsFelicidad
             // 
@@ -162,6 +163,7 @@
             btnbaniar.TabIndex = 32;
             btnbaniar.Text = "Bañar";
             btnbaniar.UseVisualStyleBackColor = true;
+            btnbaniar.Click += btnbaniar_Click_1;
             // 
             // btnDormir
             // 

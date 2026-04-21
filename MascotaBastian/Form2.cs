@@ -327,5 +327,20 @@ namespace MascotaBastian
             menu.Show(this);
             this.Hide();
         }
+
+        private void btnbaniar_Click_1(object sender, EventArgs e)
+        {
+            barrasProgreso(pgsFelicidad, -30);
+            barrasProgreso(pgsHambre, 10);
+            barrasProgreso(pgsEnergia, -30);
+
+            sumarAccion();
+            mostrarEstado();
+        }
+
+        private void btnSalir_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

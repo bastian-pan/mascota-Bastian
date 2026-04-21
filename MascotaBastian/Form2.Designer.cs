@@ -83,6 +83,7 @@
             btnbaniar.TabIndex = 17;
             btnbaniar.Text = "Bañar";
             btnbaniar.UseVisualStyleBackColor = true;
+            btnbaniar.Click += btnbaniar_Click_1;
             // 
             // btnDormir
             // 
@@ -176,6 +177,7 @@
             btnSalir.TabIndex = 26;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click_1;
             // 
             // lblEstado
             // 
