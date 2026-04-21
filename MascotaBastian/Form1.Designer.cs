@@ -54,6 +54,7 @@
             pctGatoAncianoN = new PictureBox();
             pctGatoAncianoF = new PictureBox();
             pctGatoAncianoT = new PictureBox();
+            btnVolver = new Button();
             ((System.ComponentModel.ISupportInitialize)pctNormal).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctFeliz).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctsuenio).BeginInit();
@@ -296,11 +297,22 @@
             pctGatoAncianoT.TabIndex = 25;
             pctGatoAncianoT.TabStop = false;
             // 
+            // btnVolver
+            // 
+            btnVolver.Location = new Point(574, 302);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(75, 23);
+            btnVolver.TabIndex = 26;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += btnVolver_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 341);
+            Controls.Add(btnVolver);
             Controls.Add(pctGatitoN);
             Controls.Add(lblEdad);
             Controls.Add(lblEstado);
@@ -370,5 +382,6 @@
         private PictureBox pctGatoAncianoN;
         private PictureBox pctGatoAncianoF;
         private PictureBox pctGatoAncianoT;
+        private Button btnVolver;
     }
 }

@@ -82,18 +82,17 @@ namespace MascotaBastian
         }
         private void ocultarImagenes()
         {
-            pctGatitoF.Visible = false;
-            pctGatitoT.Visible = false;
-            pctGatitoN.Visible = false;
+            pctCachorroF.Visible = false;
+            pctCachorroT.Visible = false;
+            pctCachorroN.Visible = false;
 
-            pctFeliz.Visible = false;
-            pctTriste.Visible = false;
-            pctNormal.Visible = false;
+            pctAdultoF.Visible = false;
+            pctAdultoT.Visible = false;
+            pctAdultoN.Visible = false;
 
-            pctGatoAncianoF.Visible = false;
-            pctGatoAncianoT.Visible = false;
-            pctGatoAncianoN.Visible = false;
-
+            pctAncianoF.Visible = false;
+            pctAncianoT.Visible = false;
+            pctAncianoN.Visible = false;
         }
         private void mostrarImagen(string estado)
         {
@@ -101,21 +100,21 @@ namespace MascotaBastian
 
             if (etapaActual == Etapa.Cachorro)
             {
-                if (estado == "feliz") pctGatitoF.Visible = true;
-                else if (estado == "triste") pctGatitoT.Visible = true;
-                else pctGatitoN.Visible = true;
+                if (estado == "feliz") pctCachorroF.Visible = true;
+                else if (estado == "triste") pctCachorroT.Visible = true;
+                else pctCachorroN.Visible = true;
             }
             else if (etapaActual == Etapa.Adulto)
             {
-                if (estado == "feliz") pctFeliz.Visible = true;
-                else if (estado == "triste") pctTriste.Visible = true;
-                else pctNormal.Visible = true;
+                if (estado == "feliz") pctAdultoF.Visible = true;
+                else if (estado == "triste") pctAdultoT.Visible = true;
+                else pctAdultoN.Visible = true;
             }
             else
             {
-                if (estado == "feliz") pctGatoAncianoF.Visible = true;
-                else if (estado == "triste") pctGatoAncianoT.Visible = true;
-                else pctGatoAncianoN.Visible = true;
+                if (estado == "feliz") pctAncianoF.Visible = true;
+                else if (estado == "triste") pctAncianoT.Visible = true;
+                else pctAncianoN.Visible = true;
             }
 
             BringVisiblePictureToFront();
@@ -212,7 +211,7 @@ namespace MascotaBastian
             else
                 etapaActual = Etapa.Anciano;
 
-            mostrarEstado(); // 🔥 importante
+            mostrarEstado();
         }
         private void mostrarEstado()
         {
@@ -230,14 +229,14 @@ namespace MascotaBastian
             {
                 lblEstado.Text = "Tengo sueño";
                 ocultarImagenes();
-                pctsuenio.Visible = true;
+                pctAdultoN.Visible = true;
                 BringVisiblePictureToFront();
             }
             else if (pgsEnergia.Value < 30)
             {
                 lblEstado.Text = "Estoy cansado";
                 ocultarImagenes();
-                pctsuenio.Visible = true;
+                pctAdultoN.Visible = true;
                 BringVisiblePictureToFront();
             }
             else
@@ -297,10 +296,15 @@ namespace MascotaBastian
 
             lblEstado.Text = "Tu mascota fue llevada a la perrera 😢";
 
-            pctFeliz.Visible = false;
-            pctNormal.Visible = false;
-            pctTriste.Visible = true;
-            pctsuenio.Visible = false;
+            pctCachorroF.Visible = false;
+            pctCachorroN.Visible = false;
+            pctCachorroT.Visible = true;
+            pctAdultoF.Visible = false;
+            pctAdultoN.Visible = false;
+            pctAdultoT.Visible = false;
+            pctAncianoF.Visible = false;
+            pctAncianoN.Visible = false;
+            pctAncianoT.Visible = false;
 
             btnAlimentar.Enabled = false;
             btnJugar.Enabled = false;
@@ -311,7 +315,11 @@ namespace MascotaBastian
             Application.Exit();
         }
 
-
-
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            menu menu = new menu();
+            menu.Show(this);
+            this.Hide();
+        }
     }
 }

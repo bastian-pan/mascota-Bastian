@@ -313,7 +313,11 @@ namespace MascotaBastian
             Application.Exit();
         }
 
-        
-        
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            menu menu = new menu();
+            menu.Show(this);
+            this.Hide();
+        }
     }
 }

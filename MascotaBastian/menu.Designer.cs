@@ -104,17 +104,21 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(247, 132);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(166, 119);
+            pictureBox2.Size = new Size(180, 119);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 6;
             pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(444, 132);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(171, 119);
+            pictureBox3.Size = new Size(180, 119);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 7;
             pictureBox3.TabStop = false;
             // 

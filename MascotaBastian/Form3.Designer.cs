@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             lblEdad = new Label();
             lblEstado = new Label();
             btnSalir = new Button();
@@ -43,6 +44,25 @@
             btnDormir = new Button();
             btnAlimentar = new Button();
             btnJugar = new Button();
+            pctAdultoN = new PictureBox();
+            pctAdultoF = new PictureBox();
+            pctCachorroT = new PictureBox();
+            pctAdultoT = new PictureBox();
+            pctCachorroF = new PictureBox();
+            pctAncianoT = new PictureBox();
+            pctAncianoF = new PictureBox();
+            pctAncianoN = new PictureBox();
+            pctCachorroN = new PictureBox();
+            btnVolver = new Button();
+            ((System.ComponentModel.ISupportInitialize)pctAdultoN).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctAdultoF).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctCachorroT).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctAdultoT).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctCachorroF).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctAncianoT).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctAncianoF).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctAncianoN).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctCachorroN).BeginInit();
             SuspendLayout();
             // 
             // lblEdad
@@ -169,13 +189,114 @@
             btnJugar.TabIndex = 29;
             btnJugar.Text = "Jugar";
             btnJugar.UseVisualStyleBackColor = true;
-
+            // 
+            // pctAdultoN
+            // 
+            pctAdultoN.Image = (Image)resources.GetObject("pctAdultoN.Image");
+            pctAdultoN.Location = new Point(37, 49);
+            pctAdultoN.Name = "pctAdultoN";
+            pctAdultoN.Size = new Size(200, 200);
+            pctAdultoN.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctAdultoN.TabIndex = 44;
+            pctAdultoN.TabStop = false;
+            // 
+            // pctAdultoF
+            // 
+            pctAdultoF.Image = (Image)resources.GetObject("pctAdultoF.Image");
+            pctAdultoF.Location = new Point(37, 49);
+            pctAdultoF.Name = "pctAdultoF";
+            pctAdultoF.Size = new Size(200, 200);
+            pctAdultoF.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctAdultoF.TabIndex = 45;
+            pctAdultoF.TabStop = false;
+            // 
+            // pctCachorroT
+            // 
+            pctCachorroT.Image = (Image)resources.GetObject("pctCachorroT.Image");
+            pctCachorroT.Location = new Point(37, 49);
+            pctCachorroT.Name = "pctCachorroT";
+            pctCachorroT.Size = new Size(200, 200);
+            pctCachorroT.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctCachorroT.TabIndex = 46;
+            pctCachorroT.TabStop = false;
+            // 
+            // pctAdultoT
+            // 
+            pctAdultoT.Image = (Image)resources.GetObject("pctAdultoT.Image");
+            pctAdultoT.Location = new Point(37, 49);
+            pctAdultoT.Name = "pctAdultoT";
+            pctAdultoT.Size = new Size(200, 200);
+            pctAdultoT.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctAdultoT.TabIndex = 47;
+            pctAdultoT.TabStop = false;
+            // 
+            // pctCachorroF
+            // 
+            pctCachorroF.Image = (Image)resources.GetObject("pctCachorroF.Image");
+            pctCachorroF.Location = new Point(37, 49);
+            pctCachorroF.Name = "pctCachorroF";
+            pctCachorroF.Size = new Size(200, 200);
+            pctCachorroF.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctCachorroF.TabIndex = 48;
+            pctCachorroF.TabStop = false;
+            // 
+            // pctAncianoT
+            // 
+            pctAncianoT.Image = (Image)resources.GetObject("pctAncianoT.Image");
+            pctAncianoT.Location = new Point(37, 49);
+            pctAncianoT.Name = "pctAncianoT";
+            pctAncianoT.Size = new Size(200, 200);
+            pctAncianoT.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctAncianoT.TabIndex = 49;
+            pctAncianoT.TabStop = false;
+            // 
+            // pctAncianoF
+            // 
+            pctAncianoF.Image = (Image)resources.GetObject("pctAncianoF.Image");
+            pctAncianoF.Location = new Point(37, 49);
+            pctAncianoF.Name = "pctAncianoF";
+            pctAncianoF.Size = new Size(200, 200);
+            pctAncianoF.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctAncianoF.TabIndex = 50;
+            pctAncianoF.TabStop = false;
+            // 
+            // pctAncianoN
+            // 
+            pctAncianoN.Image = (Image)resources.GetObject("pctAncianoN.Image");
+            pctAncianoN.Location = new Point(37, 49);
+            pctAncianoN.Name = "pctAncianoN";
+            pctAncianoN.Size = new Size(200, 200);
+            pctAncianoN.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctAncianoN.TabIndex = 51;
+            pctAncianoN.TabStop = false;
+            // 
+            // pctCachorroN
+            // 
+            pctCachorroN.Image = (Image)resources.GetObject("pctCachorroN.Image");
+            pctCachorroN.Location = new Point(37, 49);
+            pctCachorroN.Name = "pctCachorroN";
+            pctCachorroN.Size = new Size(200, 200);
+            pctCachorroN.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctCachorroN.TabIndex = 52;
+            pctCachorroN.TabStop = false;
+            // 
+            // btnVolver
+            // 
+            btnVolver.Location = new Point(587, 307);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(75, 23);
+            btnVolver.TabIndex = 53;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += btnVolver_Click;
             // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 342);
+            Controls.Add(btnVolver);
+            Controls.Add(pctCachorroN);
             Controls.Add(lblEdad);
             Controls.Add(lblEstado);
             Controls.Add(btnSalir);
@@ -191,8 +312,25 @@
             Controls.Add(btnDormir);
             Controls.Add(btnAlimentar);
             Controls.Add(btnJugar);
+            Controls.Add(pctAncianoN);
+            Controls.Add(pctAncianoF);
+            Controls.Add(pctAncianoT);
+            Controls.Add(pctCachorroF);
+            Controls.Add(pctAdultoT);
+            Controls.Add(pctCachorroT);
+            Controls.Add(pctAdultoF);
+            Controls.Add(pctAdultoN);
             Name = "Form3";
             Text = "Form3";
+            ((System.ComponentModel.ISupportInitialize)pctAdultoN).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctAdultoF).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctCachorroT).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctAdultoT).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctCachorroF).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctAncianoT).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctAncianoF).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctAncianoN).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctCachorroN).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -214,5 +352,15 @@
         private Button btnDormir;
         private Button btnAlimentar;
         private Button btnJugar;
+        private PictureBox pctAdultoN;
+        private PictureBox pctAdultoF;
+        private PictureBox pctCachorroT;
+        private PictureBox pctAdultoT;
+        private PictureBox pctCachorroF;
+        private PictureBox pctAncianoT;
+        private PictureBox pctAncianoF;
+        private PictureBox pctAncianoN;
+        private PictureBox pctCachorroN;
+        private Button btnVolver;
     }
 }
