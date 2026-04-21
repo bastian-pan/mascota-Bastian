@@ -10,7 +10,8 @@ namespace MascotaBastian
         private int edad = 0;
         private int contadorAcciones = 0;
 
-        private enum Etapa         {
+        private enum Etapa
+        {
             Cachorro,
             Adulto,
             Anciano
@@ -39,6 +40,8 @@ namespace MascotaBastian
             pgsSueño.Value = 20;
             pgsEnergia.Value = 80;
 
+            // ensure all images are hidden and UI shows the correct one for the current stage
+            ocultarImagenes();
             mostrarEstado();
         }
 
@@ -77,17 +80,67 @@ namespace MascotaBastian
                 barra.Value += valor;
             }
         }
-
-
-
-        private void label1_Click(object sender, EventArgs e)
+        private void ocultarImagenes()
         {
+            pctGatitoF.Visible = false;
+            pctGatitoT.Visible = false;
+            pctGatitoN.Visible = false;
 
+            pctFeliz.Visible = false;
+            pctTriste.Visible = false;
+            pctNormal.Visible = false;
+
+            pctGatoAncianoF.Visible = false;
+            pctGatoAncianoT.Visible = false;
+            pctGatoAncianoN.Visible = false;
+
+            pctsuenio.Visible = false; // si lo usas aparte
+        }
+        private void mostrarImagen(string estado)
+        {
+            ocultarImagenes();
+
+            if (etapaActual == Etapa.Cachorro)
+            {
+                if (estado == "feliz") pctGatitoF.Visible = true;
+                else if (estado == "triste") pctGatitoT.Visible = true;
+                else pctGatitoN.Visible = true;
+            }
+            else if (etapaActual == Etapa.Adulto)
+            {
+                if (estado == "feliz") pctFeliz.Visible = true;
+                else if (estado == "triste") pctTriste.Visible = true;
+                else pctNormal.Visible = true;
+            }
+            else
+            {
+                if (estado == "feliz") pctGatoAncianoF.Visible = true;
+                else if (estado == "triste") pctGatoAncianoT.Visible = true;
+                else pctGatoAncianoN.Visible = true;
+            }
+
+            BringVisiblePictureToFront();
+        }
+        private void BringVisiblePictureToFront()
+        {
+            TraerAlFrente(this);
         }
 
-        private void pgsHambre_Click(object sender, EventArgs e)
+        private void TraerAlFrente(Control contenedor)
         {
+            foreach (Control c in contenedor.Controls)
+            {
+                if (c is PictureBox pb && pb.Visible)
+                {
+                    pb.BringToFront();
+                }
 
+                // 🔥 recursivo (clave)
+                if (c.HasChildren)
+                {
+                    TraerAlFrente(c);
+                }
+            }
         }
 
         private void btnJugar_Click(object sender, EventArgs e)
@@ -95,7 +148,7 @@ namespace MascotaBastian
             barrasProgreso(pgsFelicidad, 10);
             barrasProgreso(pgsHambre, 15);
             barrasProgreso(pgsSueño, 20);
-            barrasProgreso (pgsEnergia, -10);
+            barrasProgreso(pgsEnergia, -10);
 
             sumarAccion();
             mostrarEstado();
@@ -128,13 +181,13 @@ namespace MascotaBastian
 
         }
 
-        
+
 
         private void btnbaniar_Click(object sender, EventArgs e)
         {
             barrasProgreso(pgsFelicidad, -30);
             barrasProgreso(pgsHambre, 10);
-            barrasProgreso (pgsEnergia, -30);
+            barrasProgreso(pgsEnergia, -30);
 
             sumarAccion();
             mostrarEstado();
@@ -160,52 +213,46 @@ namespace MascotaBastian
                 etapaActual = Etapa.Adulto;
             else
                 etapaActual = Etapa.Anciano;
+
+            mostrarEstado(); // 🔥 importante
         }
-        private void mostrarEstado(){ 
-            if (pgsHambre.Value > 50)
+        private void mostrarEstado()
+        {
+            if (pgsHambre.Value > 70)
             {
-                lblEstado.Text = "Estoy hambriento, Alimentame karen";
-                pctFeliz.Visible = false;
-                pctNormal.Visible = true;
-                pctTriste.Visible = false;
-                pctsuenio.Visible = false;
-
-
+                lblEstado.Text = "Estoy hambriento";
+                mostrarImagen("triste");
             }
-            else if (pgsFelicidad.Value < 20)
+            else if (pgsFelicidad.Value < 30)
             {
-                lblEstado.Text = "Estoy triste, juega conmigo karen";
-                pctFeliz.Visible = false;
-                pctNormal.Visible = false;
-                pctTriste.Visible = true;
-                pctsuenio.Visible = false;
+                lblEstado.Text = "Estoy triste";
+                mostrarImagen("triste");
             }
             else if (pgsSueño.Value > 70)
             {
-                lblEstado.Text = "Tengo mucho sueño";
-                pctFeliz.Visible = false;
-                pctNormal.Visible = false;
-                pctTriste.Visible = false;
+                lblEstado.Text = "Tengo sueño";
+                ocultarImagenes();
                 pctsuenio.Visible = true;
+                BringVisiblePictureToFront();
             }
             else if (pgsEnergia.Value < 30)
             {
-                lblEstado.Text = "Estoy cansado karen";
-                pctFeliz.Visible = false;
-                pctNormal.Visible = false;
-                pctTriste.Visible = false;
+                lblEstado.Text = "Estoy cansado";
+                ocultarImagenes();
                 pctsuenio.Visible = true;
+                BringVisiblePictureToFront();
             }
             else
             {
-                lblEstado.Text = "Estoy feliz karen";
-                pctFeliz.Visible = true;
-                pctNormal.Visible = false;
-                pctTriste.Visible = false;
-                pctsuenio.Visible = false;
+                lblEstado.Text = "Estoy feliz";
+                mostrarImagen("feliz");
             }
+
+            lblEdad.Text = "Etapa: " + etapaActual.ToString();
             actualizarBotones();
         }
+
+
         private void actualizarBotones()
         {
             btnAlimentar.Enabled = false;
@@ -265,5 +312,8 @@ namespace MascotaBastian
             MessageBox.Show("Fin del juego");
             Application.Exit();
         }
+
+        
+        
     }
 }

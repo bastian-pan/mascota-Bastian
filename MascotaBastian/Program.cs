@@ -11,7 +11,8 @@ namespace MascotaBastian
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            // Start the app showing the menu so the user can choose a pet
+            Application.Run(new menu());
         }
     }
 }

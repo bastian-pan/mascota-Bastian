@@ -48,10 +48,22 @@
             pctsuenio = new PictureBox();
             pctTriste = new PictureBox();
             lblEdad = new Label();
+            pctGatitoF = new PictureBox();
+            pctGatitoT = new PictureBox();
+            pctGatitoN = new PictureBox();
+            pctGatoAncianoN = new PictureBox();
+            pctGatoAncianoF = new PictureBox();
+            pctGatoAncianoT = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pctNormal).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctFeliz).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctsuenio).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctTriste).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctGatitoF).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctGatitoT).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctGatitoN).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctGatoAncianoN).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctGatoAncianoF).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctGatoAncianoT).BeginInit();
             SuspendLayout();
             // 
             // pgsHambre
@@ -60,12 +72,13 @@
             pgsHambre.Name = "pgsHambre";
             pgsHambre.Size = new Size(100, 23);
             pgsHambre.TabIndex = 0;
+            // 
             // pctNormal
             // 
             pctNormal.Image = (Image)resources.GetObject("pctNormal.Image");
-            pctNormal.Location = new Point(29, 54);
+            pctNormal.Location = new Point(31, 45);
             pctNormal.Name = "pctNormal";
-            pctNormal.Size = new Size(201, 190);
+            pctNormal.Size = new Size(200, 200);
             pctNormal.SizeMode = PictureBoxSizeMode.StretchImage;
             pctNormal.TabIndex = 1;
             pctNormal.TabStop = false;
@@ -78,7 +91,6 @@
             lblHambre.Size = new Size(53, 15);
             lblHambre.TabIndex = 2;
             lblHambre.Text = "Hambre:";
-            lblHambre.Click += label1_Click;
             // 
             // lblenergia
             // 
@@ -189,9 +201,9 @@
             // pctFeliz
             // 
             pctFeliz.Image = (Image)resources.GetObject("pctFeliz.Image");
-            pctFeliz.Location = new Point(29, 54);
+            pctFeliz.Location = new Point(31, 45);
             pctFeliz.Name = "pctFeliz";
-            pctFeliz.Size = new Size(201, 190);
+            pctFeliz.Size = new Size(200, 200);
             pctFeliz.SizeMode = PictureBoxSizeMode.StretchImage;
             pctFeliz.TabIndex = 16;
             pctFeliz.TabStop = false;
@@ -199,9 +211,9 @@
             // pctsuenio
             // 
             pctsuenio.Image = (Image)resources.GetObject("pctsuenio.Image");
-            pctsuenio.Location = new Point(29, 54);
+            pctsuenio.Location = new Point(31, 45);
             pctsuenio.Name = "pctsuenio";
-            pctsuenio.Size = new Size(201, 190);
+            pctsuenio.Size = new Size(200, 200);
             pctsuenio.SizeMode = PictureBoxSizeMode.StretchImage;
             pctsuenio.TabIndex = 17;
             pctsuenio.TabStop = false;
@@ -209,9 +221,9 @@
             // pctTriste
             // 
             pctTriste.Image = (Image)resources.GetObject("pctTriste.Image");
-            pctTriste.Location = new Point(29, 54);
+            pctTriste.Location = new Point(31, 45);
             pctTriste.Name = "pctTriste";
-            pctTriste.Size = new Size(201, 190);
+            pctTriste.Size = new Size(200, 200);
             pctTriste.SizeMode = PictureBoxSizeMode.StretchImage;
             pctTriste.TabIndex = 18;
             pctTriste.TabStop = false;
@@ -219,16 +231,77 @@
             // lblEdad
             // 
             lblEdad.AutoSize = true;
-            lblEdad.Location = new Point(46, 18);
+            lblEdad.Location = new Point(71, 9);
             lblEdad.Name = "lblEdad";
             lblEdad.Size = new Size(0, 15);
             lblEdad.TabIndex = 19;
+            // 
+            // pctGatitoF
+            // 
+            pctGatitoF.Image = (Image)resources.GetObject("pctGatitoF.Image");
+            pctGatitoF.Location = new Point(31, 45);
+            pctGatitoF.Name = "pctGatitoF";
+            pctGatitoF.Size = new Size(200, 200);
+            pctGatitoF.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctGatitoF.TabIndex = 20;
+            pctGatitoF.TabStop = false;
+            // 
+            // pctGatitoT
+            // 
+            pctGatitoT.Image = (Image)resources.GetObject("pctGatitoT.Image");
+            pctGatitoT.Location = new Point(31, 45);
+            pctGatitoT.Name = "pctGatitoT";
+            pctGatitoT.Size = new Size(200, 200);
+            pctGatitoT.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctGatitoT.TabIndex = 21;
+            pctGatitoT.TabStop = false;
+            // 
+            // pctGatitoN
+            // 
+            pctGatitoN.Image = (Image)resources.GetObject("pctGatitoN.Image");
+            pctGatitoN.Location = new Point(31, 45);
+            pctGatitoN.Name = "pctGatitoN";
+            pctGatitoN.Size = new Size(200, 200);
+            pctGatitoN.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctGatitoN.TabIndex = 22;
+            pctGatitoN.TabStop = false;
+            // 
+            // pctGatoAncianoN
+            // 
+            pctGatoAncianoN.Image = (Image)resources.GetObject("pctGatoAncianoN.Image");
+            pctGatoAncianoN.Location = new Point(31, 45);
+            pctGatoAncianoN.Name = "pctGatoAncianoN";
+            pctGatoAncianoN.Size = new Size(200, 200);
+            pctGatoAncianoN.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctGatoAncianoN.TabIndex = 23;
+            pctGatoAncianoN.TabStop = false;
+            // 
+            // pctGatoAncianoF
+            // 
+            pctGatoAncianoF.Image = (Image)resources.GetObject("pctGatoAncianoF.Image");
+            pctGatoAncianoF.Location = new Point(31, 45);
+            pctGatoAncianoF.Name = "pctGatoAncianoF";
+            pctGatoAncianoF.Size = new Size(200, 200);
+            pctGatoAncianoF.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctGatoAncianoF.TabIndex = 24;
+            pctGatoAncianoF.TabStop = false;
+            // 
+            // pctGatoAncianoT
+            // 
+            pctGatoAncianoT.Image = (Image)resources.GetObject("pctGatoAncianoT.Image");
+            pctGatoAncianoT.Location = new Point(31, 45);
+            pctGatoAncianoT.Name = "pctGatoAncianoT";
+            pctGatoAncianoT.Size = new Size(200, 200);
+            pctGatoAncianoT.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctGatoAncianoT.TabIndex = 25;
+            pctGatoAncianoT.TabStop = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 341);
+            Controls.Add(pctGatitoN);
             Controls.Add(lblEdad);
             Controls.Add(lblEstado);
             Controls.Add(btnbaniar);
@@ -244,6 +317,15 @@
             Controls.Add(lblenergia);
             Controls.Add(lblHambre);
             Controls.Add(pgsHambre);
+            Controls.Add(pctGatoAncianoN);
+            Controls.Add(pctGatoAncianoF);
+            Controls.Add(pctGatoAncianoT);
+            Controls.Add(pctNormal);
+            Controls.Add(pctTriste);
+            Controls.Add(pctsuenio);
+            Controls.Add(pctFeliz);
+            Controls.Add(pctGatitoF);
+            Controls.Add(pctGatitoT);
             Name = "Form1";
             Text = "Firulais";
             Load += Form1_Load;
@@ -251,6 +333,12 @@
             ((System.ComponentModel.ISupportInitialize)pctFeliz).EndInit();
             ((System.ComponentModel.ISupportInitialize)pctsuenio).EndInit();
             ((System.ComponentModel.ISupportInitialize)pctTriste).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctGatitoF).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctGatitoT).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctGatitoN).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctGatoAncianoN).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctGatoAncianoF).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctGatoAncianoT).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -276,5 +364,11 @@
         private PictureBox pctsuenio;
         private PictureBox pctTriste;
         private Label lblEdad;
+        private PictureBox pctGatitoF;
+        private PictureBox pctGatitoT;
+        private PictureBox pctGatitoN;
+        private PictureBox pctGatoAncianoN;
+        private PictureBox pctGatoAncianoF;
+        private PictureBox pctGatoAncianoT;
     }
 }
