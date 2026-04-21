@@ -94,7 +94,6 @@ namespace MascotaBastian
             pctGatoAncianoT.Visible = false;
             pctGatoAncianoN.Visible = false;
 
-            pctsuenio.Visible = false; // si lo usas aparte
         }
         private void mostrarImagen(string estado)
         {
@@ -135,7 +134,6 @@ namespace MascotaBastian
                     pb.BringToFront();
                 }
 
-                // 🔥 recursivo (clave)
                 if (c.HasChildren)
                 {
                     TraerAlFrente(c);
