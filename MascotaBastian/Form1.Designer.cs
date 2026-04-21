@@ -60,8 +60,6 @@
             pgsHambre.Name = "pgsHambre";
             pgsHambre.Size = new Size(100, 23);
             pgsHambre.TabIndex = 0;
-            pgsHambre.Click += pgsHambre_Click;
-            // 
             // pctNormal
             // 
             pctNormal.Image = (Image)resources.GetObject("pctNormal.Image");
@@ -232,10 +230,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 341);
             Controls.Add(lblEdad);
-            Controls.Add(pctNormal);
-            Controls.Add(pctTriste);
-            Controls.Add(pctsuenio);
-            Controls.Add(pctFeliz);
             Controls.Add(lblEstado);
             Controls.Add(btnbaniar);
             Controls.Add(btnSalir);
