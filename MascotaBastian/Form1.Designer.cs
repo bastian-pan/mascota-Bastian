@@ -47,6 +47,7 @@
             pctFeliz = new PictureBox();
             pctsuenio = new PictureBox();
             pctTriste = new PictureBox();
+            lblEdad = new Label();
             ((System.ComponentModel.ISupportInitialize)pctNormal).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctFeliz).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctsuenio).BeginInit();
@@ -217,11 +218,20 @@
             pctTriste.TabIndex = 18;
             pctTriste.TabStop = false;
             // 
+            // lblEdad
+            // 
+            lblEdad.AutoSize = true;
+            lblEdad.Location = new Point(46, 18);
+            lblEdad.Name = "lblEdad";
+            lblEdad.Size = new Size(0, 15);
+            lblEdad.TabIndex = 19;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 341);
+            Controls.Add(lblEdad);
             Controls.Add(pctNormal);
             Controls.Add(pctTriste);
             Controls.Add(pctsuenio);
@@ -271,5 +281,6 @@
         private PictureBox pctFeliz;
         private PictureBox pctsuenio;
         private PictureBox pctTriste;
+        private Label lblEdad;
     }
 }

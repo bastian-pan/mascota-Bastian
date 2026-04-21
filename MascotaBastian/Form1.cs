@@ -263,6 +263,7 @@ namespace MascotaBastian
             btnbaniar.Enabled = false;
 
             MessageBox.Show("Fin del juego");
+            Application.Exit();
         }
     }
 }
