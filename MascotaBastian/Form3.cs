@@ -180,16 +180,7 @@ namespace MascotaBastian
 
 
 
-        private void btnbaniar_Click(object sender, EventArgs e)
-        {
-            barrasProgreso(pgsFelicidad, -30);
-            barrasProgreso(pgsHambre, 10);
-            barrasProgreso(pgsEnergia, -30);
 
-            sumarAccion();
-            mostrarEstado();
-
-        }
 
         private void sumarAccion()
         {
